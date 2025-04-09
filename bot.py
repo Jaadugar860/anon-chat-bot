@@ -47,18 +47,21 @@ TRANSLATIONS = {
         'report_success': "✅ User reported and chat ended.",
         'no_reconnect': "❗ No reconnect request found.",
         'waiting_reconnect': "⏳ Waiting for your partner to also send /reconnect...",
-        'help': (
-            "👋 *Welcome to Anonymous Chat Bot!*
-\n\n"
-            "💡 Commands:\n"
-            "🔹 /start – Find a partner\n"
-            "🔹 /next – Skip to a new partner\n"
-            "🔹 /stop – Leave the current chat\n"
-            "🔹 /report – Report abusive partner\n"
-            "🔹 /reconnect – Reconnect if both users agree\n"
-            "🔹 /help – Show this message\n"
-            "🔹 /language – Change language"
-        ),
+# === /HELP COMMAND ===
+async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    msg = (
+        "👋 *Welcome to Anonymous Chat Bot!*\n\n"
+        "💡 *Commands:*\n"
+        "🔹 /start – Find a partner\n"
+        "🔹 /next – Skip to a new partner\n"
+        "🔹 /stop – Leave the current chat\n"
+        "🔹 /report – Report abusive partner\n"
+        "🔹 /reconnect – Reconnect if both users agree\n"
+        "🔹 /help – Show this message\n\n"
+        "⚠️ *Note:* Only group members can use this bot."
+    )
+    await update.message.reply_markdown_v2(msg)
+
         'select_lang': "🌐 Select your language:",
     },
     'hi': {
